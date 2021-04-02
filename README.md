@@ -15,6 +15,16 @@ Server App for the MERN Seed Recipes App.
 
 ## TODOS
 
+- [x] Install Express
+- [x] Install Babel for ES6 Syntax
+- [x] Install Morgan (http logger)
+- [ ] Install ID generator
+- [x] Handle Get Requests
+- [ ] Handle Post Requests
+- [ ] Handle Put Requests
+- [ ] Change request to work with MongoDB
+- [x] Create Recipes database on MongoDB
+    -> collections: recipes, users
 ## DONE
 
 ## ERRORS
