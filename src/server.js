@@ -10,7 +10,13 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
 
+//     v    change this   v
+app.use('/', recipesRouter);
 app.use('/recipes', recipesRouter);
 app.use('/user', usersRouter);
 
 export { app }
+
+
+
+

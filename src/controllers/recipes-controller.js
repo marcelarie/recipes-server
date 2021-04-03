@@ -40,7 +40,6 @@ async function addNewRecipe({ body }, response) {
 }
 
 async function removeRecipeById({ params: { id } }, response) {
-
     try {
         const recipe = await Recipe.remove({ _id: id })
         response.json(recipe)
