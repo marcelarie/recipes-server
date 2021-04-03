@@ -1,9 +1,13 @@
 import express from 'express'
 
+import {
+    singUp,
+    login
+} from '../controllers/users-controller.js'
+
 const usersRouter = express.Router();
 
-usersRouter.get(
-    '/login',
-    (request, response) => {
-        response.send()
-    })
+usersRouter.post('/register', singUp)
+usersRouter.get('/login', login)
+
+export default usersRouter

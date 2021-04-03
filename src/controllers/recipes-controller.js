@@ -45,7 +45,7 @@ async function removeRecipeById({ params: { id } }, response) {
         const recipe = await Recipe.remove({ _id: id })
         response.json(recipe)
     } catch (error) {
-
+        response.json({ message: error })
     }
 }
 
