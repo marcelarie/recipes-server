@@ -20,12 +20,15 @@
   },
   "homepage": "https://github.com/marcelarie/recipes-server#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@babel/node": "^7.13.13",
     "@babel/preset-env": "^7.13.12",
+    "dotenv": "^8.2.0",
+    "moongoose": "^0.0.4",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7"
   }
