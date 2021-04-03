@@ -3,8 +3,7 @@ import express from 'express'
 const usersRouter = express.Router();
 
 usersRouter.get(
-    '/recipes',
+    '/login',
     (request, response) => {
-    }
-
-)
+        response.send()
+    })

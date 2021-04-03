@@ -11,7 +11,7 @@ import {
 const recipesRouter = express.Router();
 
 recipesRouter.get('/', getAllRecipes);
-recipesRouter.post('/:id', getRecipeById);
+recipesRouter.get('/:id', getRecipeById);
 recipesRouter.delete('/:id', removeRecipeById);
 recipesRouter.patch('/:id', updateRecipeById);
 recipesRouter.post('/new', addNewRecipe);

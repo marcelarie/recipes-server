@@ -1,14 +1,14 @@
 db.recipes.insert(
     {
-        title: 'Recipe 01',
+        title: 'Recipe 05',
         description: 'This is a apple pie recipe',
         imageUrl: 'https://i2.wp.com/golososdelmundo.com/wp-content/uploads/2016/10/apple-pie5.jpg?resize=620%2C414',
         date: Date(),
         ingridients: ['apple', 'flour'],
         author: 'Me',
-        comments: ['comment 01', 'comment 02'],
-        upVotes: 1,
-        downVotes: 2
+        comments: ['comment 05', 'comment 02'],
+        upVotes: 9,
+        downVotes: 14
     })
 
 db.recipes.insertMany([
