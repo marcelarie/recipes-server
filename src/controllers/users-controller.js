@@ -1,6 +1,7 @@
 import User from '../models/User.js'
 
 async function singUp({ body }, response) {
+
     const user = new User({
         username: body.username,
         email: body.email,
