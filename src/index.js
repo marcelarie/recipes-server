@@ -6,7 +6,7 @@ dotenv.config()
 const PORT = process.env.PORT || 5001
 
 mongoose.connect(
-    process.env.DB_CONNECT,
+    process.env.DB_CONNECT || 'mongodb://localhost:27017/recipes',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,

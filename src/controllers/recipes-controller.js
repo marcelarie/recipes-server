@@ -20,16 +20,7 @@ async function getRecipeById({ params: { id } }, response) {
 
 async function addNewRecipe({ body }, response) {
 
-    const recipe = new Recipe({
-        title: body.title,
-        description: body.description,
-        imageUrl: body.imageUrl,
-        ingridients: body.ingridients,
-        author: body.author,
-        comments: body.comments,
-        upVotes: body.upVotes,
-        downVotes: body.downVotes
-    })
+    const recipe = new Recipe(body)
 
     try {
         const result = await recipe.save()

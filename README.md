@@ -9,8 +9,7 @@ Server App for the MERN Seed Recipes App.
 
 ## TODOS
 
-- [ ] Add singUp controller method
-- [ ] Hash password with bcrypt
+- [x] Add singUp controller method
 - [ ] Add login controller method
 - [ ] Token on login
 
@@ -36,6 +35,7 @@ Server App for the MERN Seed Recipes App.
 - [x] Change request to work with MongoDB
 - [x] Create Recipes database on MongoDB
     -> collections: recipes, users
+- [x] Hash password with bcrypt
 
 ## ERRORS
 
