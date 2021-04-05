@@ -1,9 +1,9 @@
 import User from '../models/User.js'
+import bcrypt from 'bcrypt'
 
 async function getAllUsers(request, response) {
     try {
         const users = await User.find();
-        console.log(users)
         response.json(users)
     } catch (error) {
         response.json({ message: error })
@@ -21,9 +21,14 @@ async function singUp({ body }, response) {
     }
 }
 
-async function login(request, response) {
-    console.log(request)
-    console.log(response)
+async function login({ body }, response) {
+    try {
+        const user = await User.findOne({ username: body.username });
+        const passwordCheck = await bcrypt.compare(body.password, user.password)
+        response.send(passwordCheck)
+    } catch (error) {
+        response.json({ message: error })
+    }
 }
 
 export { singUp, login, getAllUsers }
