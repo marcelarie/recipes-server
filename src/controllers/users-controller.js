@@ -1,12 +1,17 @@
 import User from '../models/User.js'
 
+async function getAllUsers(request, response) {
+    try {
+        const users = await User.find();
+        console.log(users)
+        response.json(users)
+    } catch (error) {
+        response.json({ message: error })
+    }
+}
 async function singUp({ body }, response) {
 
-    const user = new User({
-        username: body.username,
-        email: body.email,
-        password: body.password
-    })
+    const user = new User(body)
 
     try {
         const result = await user.save()
@@ -21,4 +26,4 @@ async function login(request, response) {
     console.log(response)
 }
 
-export { singUp, login }
+export { singUp, login, getAllUsers }
