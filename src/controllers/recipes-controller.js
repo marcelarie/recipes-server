@@ -24,7 +24,8 @@ async function addNewRecipe({ body }, response) {
 
     try {
         const result = await recipe.save()
-        response.status(200).json(result)
+        // response.status(200).json(result)
+        response.status(200).json({ message: true })
     } catch (error) {
         response.json({ message: error })
     }

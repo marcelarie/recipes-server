@@ -1,5 +1,7 @@
 import User from '../models/User.js'
 import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
+
 
 async function getAllUsers(request, response) {
     try {
@@ -25,7 +27,19 @@ async function login({ body }, response) {
     try {
         const user = await User.findOne({ username: body.username });
         const passwordCheck = await bcrypt.compare(body.password, user.password)
-        response.send(passwordCheck)
+        const token = jwt.sign(
+            { id: user._id },
+            process.env.SECRET,
+            { expiresIn: 86400 }
+        )
+        response.cookie('token', token, { httpOnly: true })
+        response.json(
+            {
+                user: user,
+                auth: passwordCheck,
+                token
+            }
+        )
     } catch (error) {
         response.json({ message: error })
     }

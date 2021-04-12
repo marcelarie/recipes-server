@@ -5,6 +5,9 @@ dotenv.config()
 
 const PORT = process.env.PORT || 5001
 
+mongoose.set('useCreateIndex', true)
+
+
 mongoose.connect(
     process.env.DB_CONNECT || 'mongodb://localhost:27017/recipes',
     {

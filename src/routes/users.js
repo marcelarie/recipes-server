@@ -1,4 +1,5 @@
 import express from 'express'
+import checkToken from '../middlewares/check-token.js'
 
 import {
     singUp,
@@ -8,8 +9,8 @@ import {
 
 const usersRouter = express.Router();
 
-usersRouter.get('/', getAllUsers)
+usersRouter.get('/', checkToken, getAllUsers)
 usersRouter.post('/register', singUp)
-usersRouter.get('/login', login)
+usersRouter.post('/login', login)
 
 export default usersRouter
